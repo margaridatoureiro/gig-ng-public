@@ -1,0 +1,44 @@
+h2 {
+  color: black;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  margin: 5rem auto;
+  table-layout: fixed;
+} th {
+  height: 2rem;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+} td {
+  border-bottom: 1px solid #ddd;
+  padding: 2rem;
+  text-align: center;
+  overflow-y: auto;
+}
+
+input {
+  margin-right: 0.5rem;
+} 
+
+input:required:invalid, input:focus:invalid {
+  background-image: url("https://www.lineex.es/wp-content/uploads/2018/06/alert-icon-red-11.png");
+  background-size: 1rem;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+input:required:valid {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Check_icon.svg/62px-Check_icon.svg.png");
+  background-size: 0.8rem;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+.validation-message {
+  text-align: center;
+  font-size: 1rem; 
+  color: red;
+  margin: 0 0 0 5rem;
+}

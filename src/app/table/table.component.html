@@ -1,0 +1,28 @@
+<div class="container">
+    <li>Live</li>
+    <div class="code-container">
+        <h3>YOUR CODE NOW:</h3>
+        <h2 *ngIf="codeRecords"> {{codeRecords.code}} </h2>
+    </div>
+    <div class="buttons">
+        <button class="back-button"><a  [routerLink]="['/generator']">Grid generator</a></button>
+        <form action="" ngNativeValidate #form>
+            <input type="text" placeholder="Payment Name" [value]="paymentName" (input)="paymentName = $event.target.value" required>
+            <input type="text" placeholder="Amount" [value]="paymentAmount" (input)="paymentAmount = $event.target.value" required>
+            <input type="submit" value="Submit" (click)="form.checkValidity()? createPayment($event) : null;">
+        </form>
+    </div>
+    <div class="validation-message"><span *ngIf="codeNotFound">You must generate a code before submitting a payment</span></div>
+    <table>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Code</th>
+        <th>Grid</th>
+        <tr *ngFor="let payment of records">
+            <td> {{payment.name}} </td>
+            <td> {{payment.amount}} </td>
+            <td> {{payment.code}} </td>
+            <td> {{payment.grid}} </td>
+        </tr>
+    </table>
+</div>

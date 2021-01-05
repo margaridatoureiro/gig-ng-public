@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    width: 800px;
+    margin: 30px auto;
+    text-align: center; 
+}
+
+.back-button a {
+    font-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 100px;
+  }
+
+.code-container {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid darkgrey;
+    margin: 10px 280px;
+    padding: 20px; 
+  } li, h2, h3 {
+    color: red;
+    font-weight: bold;
+  } h3 {
+    padding: 5px;
+  }
+

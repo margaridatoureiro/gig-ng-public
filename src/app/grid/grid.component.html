@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>{{ currentDate }}</h1>
+  <div class="buttons">
+    <button class="back-button"><a  [routerLink]="['/payments']" >Payments</a></button>
+    <input type="text" maxlength="1" title="Please insert letters only" placeholder="Insert a letter (optional)" [value]="letterInput" (input)="letterInput = $event.target.value" [disabled]="dynamicInput" (change)="letterInputTimer()">
+    <input type="submit" value="Submit">
+    <button (click)="startGridGenerator()" [disabled]="isGridGeneratorDisabled">Generate Random 2D Grid</button>
+  </div>
+  <div class="top-row">
+    <div *ngFor="let cell of ['', 0,1,2,3,4,5,6,7,8,9]" style="background-color: darkblue">
+      <div class="grid-item axis">{{cell}}</div>
+    </div>
+  </div>
+  <div class="grid">
+    <div *ngFor="let cell of [0,1,2,3,4,5,6,7,8,9]" style="background-color: darkblue;">
+      <div class="grid-item axis">{{cell}}</div>
+    </div>
+    <div class="grid-item" *ngFor="let cell of gridRecord; let i = index">
+      <span>{{cell}}</span>
+    </div>    
+  </div> 
+  <li>Live</li>
+  <div class="code-container">
+    <h2>YOUR CODE:</h2><h2 class="code">{{ generatedCode }}</h2>
+  </div>
+</div>
